@@ -1,8 +1,8 @@
-CREATE USER 'admin' WITH PASSWORD 'pass';
+--CREATE USER crud_admin WITH PASSWORD 'pass' IF NOT EXISTS;
 
-CREATE DATABASE 'nest-crud';
-\c 'nest-crud';
-CREATE SCHEMA 'nest-crud';
-REVOKE ALL ON DATABASE 'nest-crud' FROM PUBLIC;
-GRANT ALL PRIVILEGES ON DATABASE nest-crud TO 'admin';
-GRANT ALL PRIVILEGES ON SCHEMA nest-crud TO 'admin';
+CREATE DATABASE crud_nest_db;
+\c crud_nest_db;
+CREATE SCHEMA crud_nest_db;
+REVOKE ALL ON DATABASE crud_nest_db FROM PUBLIC;
+GRANT ALL PRIVILEGES ON DATABASE crud_nest_db TO admin;
+GRANT ALL PRIVILEGES ON SCHEMA crud_nest_db TO admin;
