@@ -1,5 +1,5 @@
 export interface UserDTO {
-    readonly id: number
+    readonly id: string
     readonly firstName: string
     readonly lastName: string
 }

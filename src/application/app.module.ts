@@ -1,14 +1,15 @@
 import { Module } from '@nestjs/common'
 import { ConfigModule, ConfigService } from '@nestjs/config'
 import { TypeOrmModule } from '@nestjs/typeorm'
-import * as ormConfig from './config/database/ormconfig'
+import { UserModule } from '../user/user.module'
+import * as config from './config/database/ormconfig'
 @Module({
     imports: [
         ConfigModule.forRoot({ isGlobal: true }),
         TypeOrmModule.forRootAsync({
-            imports: [ConfigModule],
+            imports: [ConfigModule, UserModule],
             inject: [ConfigService],
-            useFactory: ormConfig,
+            useFactory: config,
         }),
     ],
 })

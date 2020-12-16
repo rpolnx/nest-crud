@@ -4,9 +4,11 @@
     {
       "type": "node",
       "request": "attach",
-      "name": "Debug Nest Framework",
-      "protocol": "inspector",
-      "restart": true
+      "name": "Attach NestJS WS",
+      "port": 9229,
+      "restart": true,
+      "stopOnEntry": false,
+      "protocol": "inspector"
     }
   ]
 }

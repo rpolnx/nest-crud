@@ -1,8 +1,13 @@
-import { Injectable } from '@nestjs/common'
+import { UserDTO } from '../model/dto/user.dto'
 
-@Injectable()
-export class AppService {
-    getHello(): string {
-        return 'Hello World!'
-    }
+export interface UserService {
+    getAll(): Promise<UserDTO[]>
+
+    get(id: string): Promise<UserDTO>
+
+    create(dto: UserDTO): Promise<UserDTO>
+
+    update(dto: UserDTO, id: string): Promise<void>
+
+    delete(id: string): Promise<void>
 }
